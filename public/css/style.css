@@ -246,19 +246,23 @@ body::before {
     overflow: hidden;
     padding-top: 80px;
 }
-.hero-video-wrapper {
+.hero-image-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     height: 100%;
-    padding: 8px;
+    padding: 12px;
 }
-.hero-video {
+.hero-image {
     width: 100%;
     height: 100%;
-    border-radius: 8px;
     object-fit: cover;
+    border-radius: 10px;
+}
+.hero-image.pixelated {
+    image-rendering: pixelated;
+    filter: contrast(1.2) saturate(1.3);
 }
 .global-particles {
     position: fixed; top: 0; left: 0; width: 100%; height: 100%;
