@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pixel SEO & Web Tasarım - Profesyonel SEO hizmetleri, web site tasarımı ve dijital pazarlama çözümleri. İşletmenizi dijital dünyada zirveye taşıyoruz.">
+    <meta name="keywords" content="SEO, web tasarım, dijital pazarlama, arama motoru optimizasyonu, pixel art, web site">
+    <meta name="author" content="Pixel SEO">
+    <meta property="og:title" content="Pixel SEO & Web Tasarım">
+    <meta property="og:description" content="Profesyonel SEO ve web tasarım hizmetleri">
+    <meta property="og:type" content="website">
+    <title>Pixel SEO & Web Tasarım | Profesyonel Dijital Çözümler</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Pixel Art Loading Screen -->
+    <div id="loader" class="loader">
+        <div class="loader-content">
+            <div class="pixel-loading-text">LOADING...</div>
+            <div class="pixel-loading-bar">
+                <div class="pixel-loading-fill" id="loadingFill"></div>
+            </div>
+            <div class="pixel-pacman" id="pacman"></div>
+        </div>
+    </div>
+
+    <!-- Cursor Trail -->
+    <div id="cursorTrail"></div>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">
+                <span class="logo-pixel">P</span><span class="logo-text">IXEL</span>
+                <span class="logo-seo">SEO</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="nav-link active" data-section="home">Ana Sayfa</a></li>
+                <li><a href="#services" class="nav-link" data-section="services">Hizmetler</a></li>
+                <li><a href="#portfolio" class="nav-link" data-section="portfolio">Portföy</a></li>
+                <li><a href="#pricing" class="nav-link" data-section="pricing">Fiyatlar</a></li>
+                <li><a href="#about" class="nav-link" data-section="about">Hakkımızda</a></li>
+                <li><a href="#contact" class="nav-link" data-section="contact">İletişim</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="#quote" class="btn-pixel btn-primary-pixel">Teklif Al</a>
+                <button class="hamburger" id="hamburger" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Global Particles (full page) -->
+    <div class="global-particles" id="heroParticles"></div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-video-wrapper">
+            <video class="hero-video" autoplay muted loop playsinline>
+                <source src="/video.mp4" type="video/mp4">
+            </video>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section services">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">⚙️ HİZMETLERİMİZ</span>
+                <h2 class="section-title">Profesyonel <span class="highlight">Dijital Çözümler</span></h2>
+                <p class="section-desc">İşletmeniz için ihtiyaç duyduğunuz tüm dijital hizmetleri tek çatı altında sunuyoruz</p>
+            </div>
+
+            <div class="services-grid">
+                <!-- SEO Service -->
+                <div class="service-card" data-aos="fade-up">
+                    <div class="service-icon">
+                        <div class="pixel-icon seo-icon">
+                            <span>🔍</span>
+                        </div>
+                    </div>
+                    <div class="service-level">LVL 99</div>
+                    <h3>SEO Optimizasyonu</h3>
+                    <p>Arama motorlarında üst sıralara yükselmenizi sağlayan kapsamlı SEO stratejileri geliştiriyoruz.</p>
+                    <ul class="service-features">
+                        <li><span class="pixel-check">✓</span> Anahtar Kelime Analizi</li>
+                        <li><span class="pixel-check">✓</span> On-Page SEO</li>
+                        <li><span class="pixel-check">✓</span> Off-Page SEO</li>
+                        <li><span class="pixel-check">✓</span> Teknik SEO</li>
+                        <li><span class="pixel-check">✓</span> Yerel SEO</li>
+                        <li><span class="pixel-check">✓</span> Raporlama & Analiz</li>
+                    </ul>
+                    <a href="#quote" class="btn-pixel btn-service">Detaylı Bilgi</a>
+                </div>
+
+                <!-- Web Design Service -->
+                <div class="service-card featured" data-aos="fade-up" data-aos-delay="100">
+                    <div class="featured-badge">⭐ EN POPÜLER</div>
+                    <div class="service-icon">
+                        <div class="pixel-icon web-icon">
+                            <span>🎨</span>
+                        </div>
+                    </div>
+                    <div class="service-level">LVL MAX</div>
+                    <h3>Web Tasarım</h3>
+                    <p>Modern, hızlı ve kullanıcı dostu web siteleri tasarlıyoruz. Her piksel mükemmel!</p>
+                    <ul class="service-features">
+                        <li><span class="pixel-check">✓</span> Responsive Tasarım</li>
+                        <li><span class="pixel-check">✓</span> UI/UX Tasarımı</li>
+                        <li><span class="pixel-check">✓</span> E-Ticaret Çözümleri</li>
+                        <li><span class="pixel-check">✓</span> CMS Entegrasyonu</li>
+                        <li><span class="pixel-check">✓</span> Hız Optimizasyonu</li>
+                        <li><span class="pixel-check">✓</span> Güvenlik Sertifikası</li>
+                    </ul>
+                    <a href="#quote" class="btn-pixel btn-service">Detaylı Bilgi</a>
+                </div>
+
+                <!-- Digital Marketing -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-icon">
+                        <div class="pixel-icon marketing-icon">
+                            <span>📈</span>
+                        </div>
+                    </div>
+                    <div class="service-level">LVL 80</div>
+                    <h3>Dijital Pazarlama</h3>
+                    <p>Hedef kitlenize ulaşmak için etkili dijital pazarlama stratejileri oluşturuyoruz.</p>
+                    <ul class="service-features">
+                        <li><span class="pixel-check">✓</span> Google Ads Yönetimi</li>
+                        <li><span class="pixel-check">✓</span> Sosyal Medya Yönetimi</li>
+                        <li><span class="pixel-check">✓</span> İçerik Pazarlama</li>
+                        <li><span class="pixel-check">✓</span> E-posta Pazarlama</li>
+                        <li><span class="pixel-check">✓</span> Dönüşüm Optimizasyonu</li>
+                        <li><span class="pixel-check">✓</span> A/B Testi</li>
+                    </ul>
+                    <a href="#quote" class="btn-pixel btn-service">Detaylı Bilgi</a>
+                </div>
+
+                <!-- Social Media -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-icon">
+                        <div class="pixel-icon social-icon">
+                            <span>💬</span>
+                        </div>
+                    </div>
+                    <div class="service-level">LVL 75</div>
+                    <h3>Sosyal Medya</h3>
+                    <p>Sosyal medya hesaplarınızı profesyonelce yönetiyor ve büyütüyoruz.</p>
+                    <ul class="service-features">
+                        <li><span class="pixel-check">✓</span> Strateji Geliştirme</li>
+                        <li><span class="pixel-check">✓</span> İçerik Üretimi</li>
+                        <li><span class="pixel-check">✓</span> Topluluk Yönetimi</li>
+                        <li><span class="pixel-check">✓</span> Influencer İşbirliği</li>
+                        <li><span class="pixel-check">✓</span> Analitik Raporlama</li>
+                        <li><span class="pixel-check">✓</span> Kriz Yönetimi</li>
+                    </ul>
+                    <a href="#quote" class="btn-pixel btn-service">Detaylı Bilgi</a>
+                </div>
+
+                <!-- Content Writing -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-icon">
+                        <div class="pixel-icon content-icon">
+                            <span>✍️</span>
+                        </div>
+                    </div>
+                    <div class="service-level">LVL 90</div>
+                    <h3>İçerik Yazımı</h3>
+                    <p>SEO uyumlu, özgün ve etkileyici içerikler ile markanızı güçlendiriyoruz.</p>
+                    <ul class="service-features">
+                        <li><span class="pixel-check">✓</span> Blog Yazıları</li>
+                        <li><span class="pixel-check">✓</span> Web Sitesi İçerikleri</li>
+                        <li><span class="pixel-check">✓</span> Ürün Açıklamaları</li>
+                        <li><span class="pixel-check">✓</span> SEO Makaleler</li>
+                        <li><span class="pixel-check">✓</span> Copywriting</li>
+                        <li><span class="pixel-check">✓</span> Çeviri Hizmetleri</li>
+                    </ul>
+                    <a href="#quote" class="btn-pixel btn-service">Detaylı Bilgi</a>
+                </div>
+
+                <!-- Branding -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="service-icon">
+                        <div class="pixel-icon brand-icon">
+                            <span>💎</span>
+                        </div>
+                    </div>
+                    <div class="service-level">LVL 85</div>
+                    <h3>Marka & Kurumsal Kimlik</h3>
+                    <p>Güçlü bir marka kimliği oluşturarak rakipleriniz arasından sıyrılın.</p>
+                    <ul class="service-features">
+                        <li><span class="pixel-check">✓</span> Logo Tasarımı</li>
+                        <li><span class="pixel-check">✓</span> Kurumsal Kimlik</li>
+                        <li><span class="pixel-check">✓</span> Marka Stratejisi</li>
+                        <li><span class="pixel-check">✓</span> Renk & Tipografi</li>
+                        <li><span class="pixel-check">✓</span> Stil Rehberi</li>
+                        <li><span class="pixel-check">✓</span> Baskı Tasarımları</li>
+                    </ul>
+                    <a href="#quote" class="btn-pixel btn-service">Detaylı Bilgi</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="section process">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">🎯 SÜRECİMİZ</span>
+                <h2 class="section-title">Nasıl <span class="highlight">Çalışıyoruz?</span></h2>
+                <p class="section-desc">4 adımda hayalinizdeki dijital projeyi gerçeğe dönüştürüyoruz</p>
+            </div>
+            <div class="process-timeline">
+                <div class="process-step">
+                    <div class="step-number">01</div>
+                    <div class="step-icon">📋</div>
+                    <h4>Analiz & Planlama</h4>
+                    <p>İhtiyaçlarınızı analiz eder, hedeflerinizi belirler ve kapsamlı bir strateji oluştururuz.</p>
+                </div>
+                <div class="process-connector"></div>
+                <div class="process-step">
+                    <div class="step-number">02</div>
+                    <div class="step-icon">🎨</div>
+                    <h4>Tasarım</h4>
+                    <p>Pixel-perfect tasarımlar oluşturur ve onayınıza sunarız. Her detay düşünülür.</p>
+                </div>
+                <div class="process-connector"></div>
+                <div class="process-step">
+                    <div class="step-number">03</div>
+                    <div class="step-icon">⚙️</div>
+                    <h4>Geliştirme</h4>
+                    <p>Modern teknolojilerle hızlı, güvenli ve SEO uyumlu projenizi kodluyoruz.</p>
+                </div>
+                <div class="process-connector"></div>
+                <div class="process-step">
+                    <div class="step-number">04</div>
+                    <div class="step-icon">🚀</div>
+                    <h4>Yayına Alma</h4>
+                    <p>Testlerden sonra projenizi canlıya alır ve sürekli destek sağlarız.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="section portfolio">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">🏆 PORTFÖY</span>
+                <h2 class="section-title">Tamamlanan <span class="highlight">Projeler</span></h2>
+                <p class="section-desc">Müşterilerimiz için gerçekleştirdiğimiz başarılı projelerden bazıları</p>
+            </div>
+            <div class="portfolio-filters">
+                <button class="filter-btn active" data-filter="all">Tümü</button>
+                <button class="filter-btn" data-filter="seo">SEO</button>
+                <button class="filter-btn" data-filter="web">Web Tasarım</button>
+                <button class="filter-btn" data-filter="marketing">Pazarlama</button>
+            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-item" data-category="web">
+                    <div class="portfolio-pixel-art" style="--hue: 180;">
+                        <div class="pixel-art-grid" id="portfolioArt1"></div>
+                    </div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag">Web Tasarım</span>
+                        <h4>E-Ticaret Platformu</h4>
+                        <p>Modern e-ticaret çözümü ile satışları %300 artırdık</p>
+                        <div class="portfolio-stats-mini">
+                            <span>📈 %300 Satış Artışı</span>
+                            <span>⚡ 98 Performans Skoru</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="seo">
+                    <div class="portfolio-pixel-art" style="--hue: 120;">
+                        <div class="pixel-art-grid" id="portfolioArt2"></div>
+                    </div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag">SEO</span>
+                        <h4>Sağlık Sektörü SEO</h4>
+                        <p>6 ayda organik trafiği %450 artırdık</p>
+                        <div class="portfolio-stats-mini">
+                            <span>📊 %450 Trafik Artışı</span>
+                            <span>🏆 #1 Google Sıralaması</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="marketing">
+                    <div class="portfolio-pixel-art" style="--hue: 280;">
+                        <div class="pixel-art-grid" id="portfolioArt3"></div>
+                    </div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag">Dijital Pazarlama</span>
+                        <h4>Restoran Zinciri</h4>
+                        <p>Sosyal medya kampanyaları ile marka bilinirliğini artırdık</p>
+                        <div class="portfolio-stats-mini">
+                            <span>👥 50K+ Takipçi</span>
+                            <span>💬 %180 Etkileşim Artışı</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="web">
+                    <div class="portfolio-pixel-art" style="--hue: 30;">
+                        <div class="pixel-art-grid" id="portfolioArt4"></div>
+                    </div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag">Web Tasarım</span>
+                        <h4>SaaS Dashboard</h4>
+                        <p>Karmaşık verileri basitleştiren admin paneli tasarımı</p>
+                        <div class="portfolio-stats-mini">
+                            <span>⏱️ %60 Zaman Tasarrufu</span>
+                            <span>😊 4.9/5 Kullanıcı Puanı</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="seo">
+                    <div class="portfolio-pixel-art" style="--hue: 200;">
+                        <div class="pixel-art-grid" id="portfolioArt5"></div>
+                    </div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag">SEO</span>
+                        <h4>Emlak Platformu</h4>
+                        <p>Yerel SEO çalışması ile lider konumuna yükselttik</p>
+                        <div class="portfolio-stats-mini">
+                            <span>📍 #1 Yerel Arama</span>
+                            <span>📈 %350 Organik Büyüme</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="marketing">
+                    <div class="portfolio-pixel-art" style="--hue: 340;">
+                        <div class="pixel-art-grid" id="portfolioArt6"></div>
+                    </div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag">Dijital Pazarlama</span>
+                        <h4>Moda Markası Lansmanı</h4>
+                        <p>Sıfırdan dijital marka oluşturma ve büyütme stratejisi</p>
+                        <div class="portfolio-stats-mini">
+                            <span>🛒 10K+ Satış</span>
+                            <span>📱 100K+ Erişim</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="section pricing">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">💰 FİYATLANDIRMA</span>
+                <h2 class="section-title">Uygun <span class="highlight">Paketler</span></h2>
+                <p class="section-desc">Her bütçeye uygun çözümler sunuyoruz. İhtiyacınıza en uygun paketi seçin!</p>
+            </div>
+            <div class="pricing-toggle">
+                <span class="toggle-label active" data-period="monthly">Aylık</span>
+                <label class="toggle-switch">
+                    <input type="checkbox" id="pricingToggle">
+                    <span class="toggle-slider"></span>
+                </label>
+                <span class="toggle-label" data-period="yearly">Yıllık <span class="save-badge">-20%</span></span>
+            </div>
+            <div class="pricing-grid">
+                <!-- Starter -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <div class="pricing-icon">🥉</div>
+                        <h3>Starter</h3>
+                        <p class="pricing-subtitle">Küçük işletmeler için</p>
+                    </div>
+                    <div class="pricing-amount">
+                        <span class="currency">₺</span>
+                        <span class="price" data-monthly="2999" data-yearly="2399">2.999</span>
+                        <span class="period">/ay</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><span class="pixel-check">✓</span> 5 Sayfa Web Sitesi</li>
+                        <li><span class="pixel-check">✓</span> Temel SEO Optimizasyonu</li>
+                        <li><span class="pixel-check">✓</span> Responsive Tasarım</li>
+                        <li><span class="pixel-check">✓</span> SSL Sertifikası</li>
+                        <li><span class="pixel-check">✓</span> 3 İçerik Yazısı</li>
+                        <li class="disabled"><span>✗</span> E-Ticaret Entegrasyonu</li>
+                        <li class="disabled"><span>✗</span> Sosyal Medya Yönetimi</li>
+                        <li class="disabled"><span>✗</span> Öncelikli Destek</li>
+                    </ul>
+                    <a href="#quote" class="btn-pixel btn-pricing">Paketi Seç</a>
+                </div>
+
+                <!-- Professional -->
+                <div class="pricing-card popular">
+                    <div class="popular-badge">⭐ EN ÇOK TERCİH EDİLEN</div>
+                    <div class="pricing-header">
+                        <div class="pricing-icon">🥇</div>
+                        <h3>Professional</h3>
+                        <p class="pricing-subtitle">Büyüyen işletmeler için</p>
+                    </div>
+                    <div class="pricing-amount">
+                        <span class="currency">₺</span>
+                        <span class="price" data-monthly="5999" data-yearly="4799">5.999</span>
+                        <span class="period">/ay</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><span class="pixel-check">✓</span> 15 Sayfa Web Sitesi</li>
+                        <li><span class="pixel-check">✓</span> Kapsamlı SEO Optimizasyonu</li>
+                        <li><span class="pixel-check">✓</span> Responsive Tasarım</li>
+                        <li><span class="pixel-check">✓</span> SSL & Güvenlik</li>
+                        <li><span class="pixel-check">✓</span> 10 İçerik Yazısı</li>
+                        <li><span class="pixel-check">✓</span> E-Ticaret Entegrasyonu</li>
+                        <li><span class="pixel-check">✓</span> Sosyal Medya Yönetimi</li>
+                        <li class="disabled"><span>✗</span> 7/24 Öncelikli Destek</li>
+                    </ul>
+                    <a href="#quote" class="btn-pixel btn-pricing btn-popular">Paketi Seç</a>
+                </div>
+
+                <!-- Enterprise -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <div class="pricing-icon">💎</div>
+                        <h3>Enterprise</h3>
+                        <p class="pricing-subtitle">Büyük ölçekli firmalar için</p>
+                    </div>
+                    <div class="pricing-amount">
+                        <span class="currency">₺</span>
+                        <span class="price" data-monthly="12999" data-yearly="10399">12.999</span>
+                        <span class="period">/ay</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><span class="pixel-check">✓</span> Sınırsız Sayfa</li>
+                        <li><span class="pixel-check">✓</span> Full SEO Paketi</li>
+                        <li><span class="pixel-check">✓</span> Özel UI/UX Tasarım</li>
+                        <li><span class="pixel-check">✓</span> Gelişmiş Güvenlik</li>
+                        <li><span class="pixel-check">✓</span> Sınırsız İçerik</li>
+                        <li><span class="pixel-check">✓</span> E-Ticaret Entegrasyonu</li>
+                        <li><span class="pixel-check">✓</span> Tam Pazarlama Paketi</li>
+                        <li><span class="pixel-check">✓</span> 7/24 Öncelikli Destek</li>
+                    </ul>
+                    <a href="#quote" class="btn-pixel btn-pricing">Paketi Seç</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section testimonials">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">💬 REFERANSLAR</span>
+                <h2 class="section-title">Müşterilerimiz <span class="highlight">Ne Diyor?</span></h2>
+            </div>
+            <div class="testimonials-slider">
+                <div class="testimonial-track" id="testimonialTrack">
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">★★★★★</div>
+                        <p>"Pixel SEO ile çalışmak harika bir deneyimdi. Web sitemiz 3 ayda Google'da ilk sayfaya çıktı!"</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar" style="--hue: 200;">AK</div>
+                            <div class="author-info">
+                                <strong>Ahmet Kaya</strong>
+                                <span>E-Ticaret Girişimcisi</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">★★★★★</div>
+                        <p>"Profesyonel yaklaşımları ve pixel-perfect tasarımları ile hayalimizdeki siteyi yaptılar."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar" style="--hue: 340;">ZM</div>
+                            <div class="author-info">
+                                <strong>Zeynep Mutlu</strong>
+                                <span>Restoran Sahibi</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">★★★★★</div>
+                        <p>"SEO çalışmaları sayesinde organik trafiğimiz %400 arttı. Müthiş bir ekip!"</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar" style="--hue: 120;">MB</div>
+                            <div class="author-info">
+                                <strong>Mehmet Bal</strong>
+                                <span>Sağlık Sektörü</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">★★★★★</div>
+                        <p>"Sosyal medya yönetimi konusunda çok başarılılar. Takipçi sayımız 10 katına çıktı!"</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar" style="--hue: 280;">EŞ</div>
+                            <div class="author-info">
+                                <strong>Elif Şahin</strong>
+                                <span>Moda Markası Kurucusu</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-nav">
+                    <button class="test-nav-btn" id="testPrev">◀</button>
+                    <div class="test-dots" id="testDots"></div>
+                    <button class="test-nav-btn" id="testNext">▶</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-visual">
+                    <div class="about-pixel-scene">
+                        <div class="pixel-team">
+                            <div class="team-member" style="--delay: 0s;">
+                                <div class="member-head"></div>
+                                <div class="member-body"></div>
+                            </div>
+                            <div class="team-member" style="--delay: 0.5s;">
+                                <div class="member-head"></div>
+                                <div class="member-body"></div>
+                            </div>
+                            <div class="team-member" style="--delay: 1s;">
+                                <div class="member-head"></div>
+                                <div class="member-body"></div>
+                            </div>
+                            <div class="team-member" style="--delay: 1.5s;">
+                                <div class="member-head"></div>
+                                <div class="member-body"></div>
+                            </div>
+                        </div>
+                        <div class="about-monitor">
+                            <div class="screen-code">
+                                <span class="code-line green">const</span> <span class="code-line blue">pixel</span> = <span class="code-line green">'SEO'</span>;<br>
+                                <span class="code-line green">async function</span> <span class="code-line yellow">rank</span>() {<br>
+                                &nbsp;&nbsp;<span class="code-line green">await</span> <span class="code-line yellow">optimize</span>();<br>
+                                &nbsp;&nbsp;<span class="code-line green">return</span> <span class="code-line blue">'success'</span>;<br>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-content">
+                    <span class="section-badge">🏢 HAKKIMIZDA</span>
+                    <h2 class="section-title">Biz <span class="highlight">Kimiz?</span></h2>
+                    <p class="about-text">
+                        2010 yılından bu yana dijital dünyada iz bırakan bir ekibiz. Her projeyi bir oyun gibi düşünüyor,
+                        her pikseli özenle yerleştiriyoruz. Müşterilerimizin başarısı, bizim high score'umuz!
+                    </p>
+                    <div class="about-features">
+                        <div class="about-feature">
+                            <span class="feature-icon">🎯</span>
+                            <div>
+                                <strong>Hedef Odaklı</strong>
+                                <p>Her projede ölçülebilir sonuçlar hedefliyoruz</p>
+                            </div>
+                        </div>
+                        <div class="about-feature">
+                            <span class="feature-icon">🔬</span>
+                            <div>
+                                <strong>Veri Odaklı</strong>
+                                <p>Veri analizi ile stratejilerimizi optimize ediyoruz</p>
+                            </div>
+                        </div>
+                        <div class="about-feature">
+                            <span class="feature-icon">🤝</span>
+                            <div>
+                                <strong>İş Ortaklığı</strong>
+                                <p>Müşterilerimizle uzun vadeli ilişkiler kuruyoruz</p>
+                            </div>
+                        </div>
+                        <div class="about-feature">
+                            <span class="feature-icon">⚡</span>
+                            <div>
+                                <strong>Hızlı Teslimat</strong>
+                                <p>Zamanında ve kaliteli teslimat garantisi</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack -->
+    <section class="section tech-stack">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">🛠️ TEKNOLOJİLER</span>
+                <h2 class="section-title">Kullandığımız <span class="highlight">Teknolojiler</span></h2>
+            </div>
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <div class="tech-icon-box" style="--hue: 220;">⚛️</div>
+                    <span>React</span>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon-box" style="--hue: 260;">🔷</div>
+                    <span>TypeScript</span>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon-box" style="--hue: 160;">🟢</div>
+                    <span>Node.js</span>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon-box" style="--hue: 340;">🔶</div>
+                    <span>Python</span>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon-box" style="--hue: 200;">🐘</div>
+                    <span>PHP</span>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon-box" style="--hue: 130;">🌐</div>
+                    <span>WordPress</span>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon-box" style="--hue: 30;">🗄️</div>
+                    <span>MySQL</span>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon-box" style="--hue: 90;">🍃</div>
+                    <span>MongoDB</span>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon-box" style="--hue: 180;">🐳</div>
+                    <span>Docker</span>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon-box" style="--hue: 280;">☁️</div>
+                    <span>AWS</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Section -->
+    <section id="quote" class="section quote-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">📝 TEKLİF AL</span>
+                <h2 class="section-title">Ücretsiz <span class="highlight">Teklif Talep Edin</span></h2>
+                <p class="section-desc">Projeniz hakkında bilgi verin, size en uygun çözümü sunalım</p>
+            </div>
+            <div class="quote-grid">
+                <div class="quote-form-wrapper">
+                    <form id="quoteForm" class="quote-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="quoteName">İsim Soyisim *</label>
+                                <input type="text" id="quoteName" name="name" required placeholder="Adınız Soyadınız">
+                            </div>
+                            <div class="form-group">
+                                <label for="quoteEmail">E-posta *</label>
+                                <input type="email" id="quoteEmail" name="email" required placeholder="ornek@email.com">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="quoteCompany">Firma Adı</label>
+                                <input type="text" id="quoteCompany" name="company" placeholder="Firmanızın Adı">
+                            </div>
+                            <div class="form-group">
+                                <label for="quotePhone">Telefon</label>
+                                <input type="tel" id="quotePhone" name="phone" placeholder="+90 5XX XXX XX XX">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="quoteService">Hizmet Seçimi *</label>
+                                <select id="quoteService" name="service" required>
+                                    <option value="">Hizmet Seçin</option>
+                                    <option value="seo">SEO Optimizasyonu</option>
+                                    <option value="web">Web Tasarım</option>
+                                    <option value="marketing">Dijital Pazarlama</option>
+                                    <option value="social">Sosyal Medya</option>
+                                    <option value="content">İçerik Yazımı</option>
+                                    <option value="brand">Marka Kimliği</option>
+                                    <option value="full">Full Paket</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="quoteBudget">Bütçe Aralığı</label>
+                                <select id="quoteBudget" name="budget">
+                                    <option value="">Bütçe Seçin</option>
+                                    <option value="1k-3k">₺1.000 - ₺3.000</option>
+                                    <option value="3k-5k">₺3.000 - ₺5.000</option>
+                                    <option value="5k-10k">₺5.000 - ₺10.000</option>
+                                    <option value="10k+">₺10.000+</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="quoteDetails">Proje Detayları</label>
+                            <textarea id="quoteDetails" name="details" rows="5" placeholder="Projeniz hakkında detaylı bilgi verin..."></textarea>
+                        </div>
+                        <button type="submit" class="btn-pixel btn-primary-pixel btn-lg btn-submit">
+                            <span class="btn-text">Teklif Talep Et</span>
+                            <span class="btn-loading" style="display:none;">
+                                <span class="pixel-spinner"></span> Gönderiliyor...
+                            </span>
+                        </button>
+                    </form>
+                    <div id="quoteSuccess" class="form-success" style="display:none;">
+                        <div class="success-icon">🎮</div>
+                        <h3>Teklif Talebiniz Alındı!</h3>
+                        <p>24 saat içinde size ulaşacağız. Teşekkürler!</p>
+                    </div>
+                </div>
+                <div class="quote-info">
+                    <div class="info-card">
+                        <div class="info-icon">⚡</div>
+                        <h4>Hızlı Yanıt</h4>
+                        <p>Teklif taleplerinize 24 saat içinde dönüş yapıyoruz</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">📋</div>
+                        <h4>Detaylı Analiz</h4>
+                        <p>Projenizi analiz ederek en uygun çözümü öneriyoruz</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">💰</div>
+                        <h4>Ücretsiz Danışmanlık</h4>
+                        <p>İlk görüşme ve danışmanlık hizmetimiz tamamen ücretsiz</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">🔒</div>
+                        <h4>Gizlilik Garantisi</h4>
+                        <p>Bilgileriniz gizli tutulur ve üçüncü kişilerle paylaşılmaz</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">📞 İLETİŞİM</span>
+                <h2 class="section-title">Bizimle <span class="highlight">İletişime Geçin</span></h2>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info-grid">
+                    <div class="contact-card">
+                        <div class="contact-icon">📍</div>
+                        <h4>Adres</h4>
+                        <p>Levent Mahallesi, Büyükdere Cad. No:123<br>Beşiktaş, İstanbul</p>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">📞</div>
+                        <h4>Telefon</h4>
+                        <p>+90 (212) 555 00 00<br>+90 (532) 555 00 00</p>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">📧</div>
+                        <h4>E-posta</h4>
+                        <p>info@pixelseo.com<br>destek@pixelseo.com</p>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">🕐</div>
+                        <h4>Çalışma Saatleri</h4>
+                        <p>Pzt - Cum: 09:00 - 18:00<br>Cmt: 10:00 - 14:00</p>
+                    </div>
+                </div>
+                <div class="contact-form-wrapper">
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="contactName">İsim *</label>
+                                <input type="text" id="contactName" name="name" required placeholder="Adınız">
+                            </div>
+                            <div class="form-group">
+                                <label for="contactEmail">E-posta *</label>
+                                <input type="email" id="contactEmail" name="email" required placeholder="E-postanız">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactService">Konu</label>
+                            <select id="contactService" name="service">
+                                <option value="">Konu Seçin</option>
+                                <option value="seo">SEO Hizmetleri</option>
+                                <option value="web">Web Tasarım</option>
+                                <option value="marketing">Dijital Pazarlama</option>
+                                <option value="other">Diğer</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactMessage">Mesaj *</label>
+                            <textarea id="contactMessage" name="message" rows="4" required placeholder="Mesajınızı yazın..."></textarea>
+                        </div>
+                        <button type="submit" class="btn-pixel btn-primary-pixel">Mesaj Gönder</button>
+                    </form>
+                    <div id="contactSuccess" class="form-success" style="display:none;">
+                        <div class="success-icon">✉️</div>
+                        <h3>Mesajınız Gönderildi!</h3>
+                        <p>En kısa sürede size dönüş yapacağız.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <div class="newsletter-text">
+                    <h3>📬 Bültene Abone Olun!</h3>
+                    <p>SEO ipuçları, web tasarım trendleri ve özel kampanyalardan haberdar olun</p>
+                </div>
+                <form id="newsletterForm" class="newsletter-form">
+                    <input type="email" id="newsletterEmail" placeholder="E-posta adresiniz" required>
+                    <button type="submit" class="btn-pixel btn-primary-pixel">Abone Ol</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#home" class="nav-logo">
+                        <span class="logo-pixel">P</span><span class="logo-text">IXEL</span>
+                        <span class="logo-seo">SEO</span>
+                    </a>
+                    <p>Dijital dünyada işletmenizi bir sonraki seviyeye taşıyoruz. Pixel-perfect çözümler ile fark yaratın.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Twitter">🐦</a>
+                        <a href="#" class="social-link" aria-label="Instagram">📸</a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">💼</a>
+                        <a href="#" class="social-link" aria-label="GitHub">💻</a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Hızlı Bağlantılar</h4>
+                    <ul>
+                        <li><a href="#home">Ana Sayfa</a></li>
+                        <li><a href="#services">Hizmetler</a></li>
+                        <li><a href="#portfolio">Portföy</a></li>
+                        <li><a href="#pricing">Fiyatlar</a></li>
+                        <li><a href="#about">Hakkımızda</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Hizmetlerimiz</h4>
+                    <ul>
+                        <li><a href="#services">SEO Optimizasyonu</a></li>
+                        <li><a href="#services">Web Tasarım</a></li>
+                        <li><a href="#services">Dijital Pazarlama</a></li>
+                        <li><a href="#services">Sosyal Medya</a></li>
+                        <li><a href="#services">İçerik Yazımı</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Destek</h4>
+                    <ul>
+                        <li><a href="#contact">İletişim</a></li>
+                        <li><a href="#quote">Teklif Al</a></li>
+                        <li><a href="#">SSS</a></li>
+                        <li><a href="#">Gizlilik Politikası</a></li>
+                        <li><a href="#">Kullanım Koşulları</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Pixel SEO & Web Tasarım. Tüm hakları saklıdır.</p>
+                <p class="pixel-footer-text">Made with ❤️ and pixels</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button id="backToTop" class="back-to-top" aria-label="Yukarı çık">
+        <span>▲</span>
+    </button>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <script src="/js/main.js"></script>
+</body>
+</html>
