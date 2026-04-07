@@ -70,7 +70,7 @@ body::before {
 /* ---- Loading Screen - SEO Success ---- */
 .loader {
     position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-    background: linear-gradient(135deg, #0a0a2e 0%, #1a1040 50%, #0d2137 100%);
+    background: linear-gradient(135deg, #191970 0%, #0c0c3a 40%, #10104a 70%, #191970 100%);
     display: flex; align-items: center; justify-content: center;
     z-index: 10000; transition: opacity 0.8s, visibility 0.8s;
     overflow: hidden;
@@ -113,16 +113,41 @@ body::before {
     background-size: 40px 40px;
 }
 
+/* Pixel Clouds */
+.pixel-cloud {
+    position: absolute;
+    left: var(--start);
+    animation: cloudFloat var(--speed) linear infinite;
+    image-rendering: pixelated;
+}
+.cloud-row {
+    display: flex; justify-content: center;
+}
+.cloud-row span {
+    display: block;
+    width: 10px; height: 10px;
+    background: rgba(200, 210, 255, 0.08);
+    border-radius: 2px;
+}
+.pixel-cloud:nth-child(5) .cloud-row span { background: rgba(200, 210, 255, 0.06); }
+.pixel-cloud:nth-child(6) .cloud-row span { background: rgba(180, 200, 255, 0.07); }
+.pixel-cloud:nth-child(7) .cloud-row span { background: rgba(200, 210, 255, 0.05); }
+.pixel-cloud:nth-child(8) .cloud-row span { background: rgba(180, 190, 255, 0.06); }
+@keyframes cloudFloat {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(100vw + 250px)); }
+}
+
 /* Main content */
 .loader-main {
     position: relative; z-index: 2;
-    width: 90%; max-width: 520px;
+    width: 92%; max-width: 700px;
     text-align: center;
 }
 .loader-brand {
     font-family: var(--font-pixel);
-    font-size: 20px;
-    margin-bottom: 28px;
+    font-size: 26px;
+    margin-bottom: 36px;
     color: #fff;
 }
 .brand-p { color: #6c5ce7; }
@@ -134,21 +159,21 @@ body::before {
     background: rgba(255,255,255,0.03);
     border: 1px solid rgba(255,255,255,0.08);
     border-radius: 16px;
-    padding: 24px 20px 16px;
-    margin-bottom: 20px;
+    padding: 30px 24px 18px;
+    margin-bottom: 24px;
     backdrop-filter: blur(10px);
 }
 .chart-area { position: relative; }
 .chart-line {
     position: absolute; top: 0; left: 0;
-    width: 100%; height: 100px;
+    width: 100%; height: 140px;
     z-index: 2;
 }
 .chart-line svg { width: 100%; height: 100%; }
 
 .chart-bars-row {
     display: flex; align-items: flex-end; justify-content: space-around;
-    height: 100px; gap: 6px;
+    height: 140px; gap: 8px;
     position: relative; z-index: 1;
 }
 .c-bar {
@@ -206,21 +231,21 @@ body::before {
     background: rgba(255,255,255,0.04);
     border: 1px solid rgba(255,255,255,0.08);
     border-radius: 10px;
-    padding: 12px 8px;
-    display: flex; align-items: center; gap: 8px;
+    padding: 16px 10px;
+    display: flex; align-items: center; gap: 10px;
 }
-.metric-icon { font-size: 20px; }
+.metric-icon { font-size: 26px; }
 .metric-info { text-align: left; }
 .metric-label {
     display: block;
     font-family: var(--font-pixel);
-    font-size: 6px;
+    font-size: 7px;
     color: rgba(255,255,255,0.35);
     margin-bottom: 4px;
 }
 .metric-value {
     font-family: var(--font-pixel);
-    font-size: 11px;
+    font-size: 13px;
     color: #00cec9;
     text-shadow: 0 0 8px rgba(0, 206, 201, 0.3);
 }

@@ -33,16 +33,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function updateChart(progress) {
         const visibleCount = Math.floor(progress / 10) + 1;
-        let pathD = 'M 0 ' + (120 - chartHeights[0] * 1.1);
+        let pathD = 'M 0 ' + (140 - chartHeights[0] * 1.3);
         let fillD = pathD;
         for (let i = 1; i < Math.min(visibleCount, totalPoints); i++) {
             const x = (i / (totalPoints - 1)) * 300;
-            const y = 120 - chartHeights[i] * 1.1;
+            const y = 140 - chartHeights[i] * 1.3;
             pathD += ` L ${x} ${y}`;
         }
         const lastX = ((Math.min(visibleCount, totalPoints) - 1) / (totalPoints - 1)) * 300;
         chartPath.setAttribute('d', pathD);
-        fillD = pathD + ` L ${lastX} 120 L 0 120 Z`;
+        fillD = pathD + ` L ${lastX} 140 L 0 140 Z`;
         chartFill.setAttribute('d', fillD);
     }
 
