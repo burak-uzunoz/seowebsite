@@ -3,6 +3,46 @@
    ======================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
+    // ---- Video Intro ----
+    const videoIntro = document.getElementById('videoIntro');
+    const introVideo = document.getElementById('introVideo');
+    const introSkip = document.getElementById('introSkip');
+    const introProgressFill = document.getElementById('introProgressFill');
+
+    function dismissIntro() {
+        videoIntro.classList.add('hidden');
+        setTimeout(() => { videoIntro.remove(); }, 600);
+    }
+
+    function updateIntroProgress() {
+        if (!introVideo.duration) return;
+        const pct = (introVideo.currentTime / introVideo.duration) * 100;
+        introProgressFill.style.width = pct + '%';
+    }
+
+    if (introVideo && videoIntro) {
+        // Check if user already saw intro this session
+        const introSeen = sessionStorage.getItem('pixelSeo_introSeen');
+        if (introSeen) {
+            videoIntro.remove();
+        } else {
+            introVideo.play().catch(() => {
+                // autoplay blocked - skip intro
+                dismissIntro();
+            });
+            introVideo.addEventListener('timeupdate', updateIntroProgress);
+            introVideo.addEventListener('ended', () => {
+                sessionStorage.setItem('pixelSeo_introSeen', '1');
+                dismissIntro();
+            });
+            introSkip.addEventListener('click', () => {
+                introVideo.pause();
+                sessionStorage.setItem('pixelSeo_introSeen', '1');
+                dismissIntro();
+            });
+        }
+    }
+
     // ---- Loading Screen - SEO Success ----
     const loader = document.getElementById('loader');
     const loadingFill = document.getElementById('loadingFill');
