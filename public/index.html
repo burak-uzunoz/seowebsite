@@ -15,14 +15,87 @@
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Pixel Art Loading Screen -->
+    <!-- SEO Success Loading Screen -->
     <div id="loader" class="loader">
-        <div class="loader-content">
-            <div class="pixel-loading-text">LOADING...</div>
-            <div class="pixel-loading-bar">
-                <div class="pixel-loading-fill" id="loadingFill"></div>
+        <!-- Background decorations -->
+        <div class="loader-bg">
+            <div class="bg-circle c1"></div>
+            <div class="bg-circle c2"></div>
+            <div class="bg-circle c3"></div>
+            <div class="bg-grid"></div>
+        </div>
+        <div class="loader-main">
+            <div class="loader-brand">
+                <span class="brand-p">P</span><span class="brand-rest">IXEL</span>
+                <span class="brand-seo">SEO</span>
             </div>
-            <div class="pixel-pacman" id="pacman"></div>
+            <div class="loader-chart-wrap">
+                <div class="chart-area">
+                    <div class="chart-line" id="chartLine">
+                        <svg viewBox="0 0 300 120" preserveAspectRatio="none">
+                            <path id="chartPath" d="" stroke="url(#chartGrad)" stroke-width="3" fill="none"/>
+                            <path id="chartFill" d="" fill="url(#chartFillGrad)" opacity="0.15"/>
+                            <defs>
+                                <linearGradient id="chartGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                                    <stop offset="0%" stop-color="#6c5ce7"/>
+                                    <stop offset="100%" stop-color="#00cec9"/>
+                                </linearGradient>
+                                <linearGradient id="chartFillGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                                    <stop offset="0%" stop-color="#6c5ce7"/>
+                                    <stop offset="100%" stop-color="transparent"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                    <div class="chart-bars-row">
+                        <div class="c-bar" style="--h:15%;--d:0s;"><span class="c-bar-val">15</span></div>
+                        <div class="c-bar" style="--h:25%;--d:0.15s;"><span class="c-bar-val">25</span></div>
+                        <div class="c-bar" style="--h:20%;--d:0.3s;"><span class="c-bar-val">20</span></div>
+                        <div class="c-bar" style="--h:40%;--d:0.45s;"><span class="c-bar-val">40</span></div>
+                        <div class="c-bar" style="--h:35%;--d:0.6s;"><span class="c-bar-val">35</span></div>
+                        <div class="c-bar" style="--h:55%;--d:0.75s;"><span class="c-bar-val">55</span></div>
+                        <div class="c-bar" style="--h:50%;--d:0.9s;"><span class="c-bar-val">50</span></div>
+                        <div class="c-bar" style="--h:70%;--d:1.05s;"><span class="c-bar-val">70</span></div>
+                        <div class="c-bar" style="--h:80%;--d:1.2s;"><span class="c-bar-val">80</span></div>
+                        <div class="c-bar active" style="--h:95%;--d:1.35s;"><span class="c-bar-val">95</span></div>
+                    </div>
+                    <div class="chart-labels">
+                        <span>Oca</span><span>Şub</span><span>Mar</span><span>Nis</span>
+                        <span>May</span><span>Haz</span><span>Tem</span><span>Ağu</span>
+                        <span>Eyl</span><span>Eki</span>
+                    </div>
+                </div>
+            </div>
+            <div class="loader-metrics">
+                <div class="metric">
+                    <div class="metric-icon">📈</div>
+                    <div class="metric-info">
+                        <span class="metric-label">Organik Trafik</span>
+                        <span class="metric-value" id="metricTraffic">+0%</span>
+                    </div>
+                </div>
+                <div class="metric">
+                    <div class="metric-icon">🏆</div>
+                    <div class="metric-info">
+                        <span class="metric-label">Google Sıralaması</span>
+                        <span class="metric-value" id="metricRank">#--</span>
+                    </div>
+                </div>
+                <div class="metric">
+                    <div class="metric-icon">⚡</div>
+                    <div class="metric-info">
+                        <span class="metric-label">Performans</span>
+                        <span class="metric-value" id="metricPerf">0/100</span>
+                    </div>
+                </div>
+            </div>
+            <div class="loader-progress">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="loadingFill"></div>
+                </div>
+                <span class="progress-text" id="progressText">0%</span>
+            </div>
+            <div class="loader-status" id="loadingStatus">SEO Analizi Başlatılıyor...</div>
         </div>
     </div>
 

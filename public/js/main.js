@@ -3,19 +3,74 @@
    ======================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
-    // ---- Loading Screen ----
+    // ---- Loading Screen - SEO Success ----
     const loader = document.getElementById('loader');
     const loadingFill = document.getElementById('loadingFill');
+    const progressText = document.getElementById('progressText');
+    const loadingStatus = document.getElementById('loadingStatus');
+    const metricTraffic = document.getElementById('metricTraffic');
+    const metricRank = document.getElementById('metricRank');
+    const metricPerf = document.getElementById('metricPerf');
+    const chartPath = document.getElementById('chartPath');
+    const chartFill = document.getElementById('chartFill');
+
+    const stages = [
+        'Anahtar Kelimeler Analiz Ediliyor...',
+        'Rakip Stratejileri İnceleniyor...',
+        'On-Page SEO Optimizasyonu...',
+        'İçerik Kalitesi Değerlendiriliyor...',
+        'Backlink Profili Güçlendiriliyor...',
+        'Teknik SEO Taraması Yapılıyor...',
+        'Sayga Hızı Optimize Ediliyor...',
+        'Mobil Uyumluluk Kontrol Ediliyor...',
+        'Sıralama Pozisyonu Yükseliyor...',
+        'SEO Başarıyla Tamamlandı!'
+    ];
+
+    // Animate SVG chart line
+    const totalPoints = 10;
+    const chartHeights = [15, 25, 20, 40, 35, 55, 50, 70, 80, 95];
+
+    function updateChart(progress) {
+        const visibleCount = Math.floor(progress / 10) + 1;
+        let pathD = 'M 0 ' + (120 - chartHeights[0] * 1.1);
+        let fillD = pathD;
+        for (let i = 1; i < Math.min(visibleCount, totalPoints); i++) {
+            const x = (i / (totalPoints - 1)) * 300;
+            const y = 120 - chartHeights[i] * 1.1;
+            pathD += ` L ${x} ${y}`;
+        }
+        const lastX = ((Math.min(visibleCount, totalPoints) - 1) / (totalPoints - 1)) * 300;
+        chartPath.setAttribute('d', pathD);
+        fillD = pathD + ` L ${lastX} 120 L 0 120 Z`;
+        chartFill.setAttribute('d', fillD);
+    }
+
     let loadProgress = 0;
     const loadInterval = setInterval(() => {
-        loadProgress += Math.random() * 15 + 5;
+        loadProgress += Math.random() * 10 + 4;
         if (loadProgress >= 100) {
             loadProgress = 100;
             clearInterval(loadInterval);
-            setTimeout(() => loader.classList.add('hidden'), 400);
+            loadingStatus.textContent = stages[9];
+            setTimeout(() => loader.classList.add('hidden'), 600);
         }
+
         loadingFill.style.width = loadProgress + '%';
-    }, 150);
+        progressText.textContent = Math.floor(loadProgress) + '%';
+
+        const stageIdx = Math.min(Math.floor(loadProgress / 10), 9);
+        loadingStatus.textContent = stages[stageIdx];
+
+        // Update metrics
+        const trafficVal = Math.floor(loadProgress * 4.5);
+        metricTraffic.textContent = '+' + trafficVal + '%';
+        const rankStages = [50, 40, 30, 25, 20, 15, 10, 7, 3, 1];
+        metricRank.textContent = '#' + rankStages[stageIdx];
+        metricPerf.textContent = Math.floor(loadProgress) + '/100';
+
+        updateChart(loadProgress);
+    }, 180);
 
     // ---- Cursor Trail ----
     const cursorTrail = document.getElementById('cursorTrail');

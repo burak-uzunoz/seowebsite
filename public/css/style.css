@@ -67,57 +67,197 @@ body::before {
 .section { padding: 100px 0; position: relative; }
 .highlight { background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
 
-/* ---- Loading Screen ---- */
+/* ---- Loading Screen - SEO Success ---- */
 .loader {
     position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-    background: var(--bg-primary);
+    background: linear-gradient(135deg, #0a0a2e 0%, #1a1040 50%, #0d2137 100%);
     display: flex; align-items: center; justify-content: center;
-    z-index: 10000; transition: opacity 0.5s, visibility 0.5s;
+    z-index: 10000; transition: opacity 0.8s, visibility 0.8s;
+    overflow: hidden;
 }
 .loader.hidden { opacity: 0; visibility: hidden; }
-.loader-content { text-align: center; }
-.pixel-loading-text {
+
+/* Background decorations */
+.loader-bg {
+    position: absolute; width: 100%; height: 100%;
+    top: 0; left: 0; pointer-events: none;
+}
+.bg-circle {
+    position: absolute; border-radius: 50%;
+    filter: blur(80px); opacity: 0.12;
+}
+.bg-circle.c1 {
+    width: 400px; height: 400px;
+    background: #6c5ce7; top: -100px; left: -100px;
+    animation: bgPulse 6s ease-in-out infinite;
+}
+.bg-circle.c2 {
+    width: 300px; height: 300px;
+    background: #00cec9; bottom: -80px; right: -80px;
+    animation: bgPulse 6s ease-in-out infinite 2s;
+}
+.bg-circle.c3 {
+    width: 250px; height: 250px;
+    background: #fd79a8; top: 50%; left: 60%;
+    animation: bgPulse 6s ease-in-out infinite 4s;
+}
+@keyframes bgPulse {
+    0%, 100% { transform: scale(1); opacity: 0.12; }
+    50% { transform: scale(1.3); opacity: 0.18; }
+}
+.bg-grid {
+    position: absolute; width: 100%; height: 100%;
+    background-image:
+        linear-gradient(rgba(108,92,231,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(108,92,231,0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+}
+
+/* Main content */
+.loader-main {
+    position: relative; z-index: 2;
+    width: 90%; max-width: 520px;
+    text-align: center;
+}
+.loader-brand {
     font-family: var(--font-pixel);
-    color: var(--accent-2);
-    font-size: 14px;
+    font-size: 20px;
+    margin-bottom: 28px;
+    color: #fff;
+}
+.brand-p { color: #6c5ce7; }
+.brand-rest { color: #fff; }
+.brand-seo { color: #00cec9; margin-left: 6px; }
+
+/* Chart */
+.loader-chart-wrap {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+    padding: 24px 20px 16px;
     margin-bottom: 20px;
-    animation: blink 0.8s infinite;
+    backdrop-filter: blur(10px);
 }
-@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
-.pixel-loading-bar {
-    width: 300px; height: 20px;
-    background: var(--bg-card);
-    border: 3px solid var(--accent-2);
+.chart-area { position: relative; }
+.chart-line {
+    position: absolute; top: 0; left: 0;
+    width: 100%; height: 100px;
+    z-index: 2;
+}
+.chart-line svg { width: 100%; height: 100%; }
+
+.chart-bars-row {
+    display: flex; align-items: flex-end; justify-content: space-around;
+    height: 100px; gap: 6px;
+    position: relative; z-index: 1;
+}
+.c-bar {
+    flex: 1;
+    background: linear-gradient(180deg, #6c5ce7, #4834d4);
+    border-radius: 4px 4px 0 0;
+    height: 0;
+    animation: barRise 2s ease-out forwards;
+    animation-delay: var(--d);
     position: relative;
+    opacity: 0.6;
+}
+.c-bar.active {
+    background: linear-gradient(180deg, #00cec9, #00b894);
+    opacity: 1;
+    box-shadow: 0 0 15px rgba(0, 206, 201, 0.3);
+}
+@keyframes barRise {
+    0% { height: 0; }
+    100% { height: var(--h); }
+}
+.c-bar-val {
+    position: absolute;
+    top: -18px; left: 50%;
+    transform: translateX(-50%);
+    font-family: var(--font-pixel);
+    font-size: 7px;
+    color: rgba(255,255,255,0.4);
+    opacity: 0;
+    animation: barValFade 0.5s forwards;
+    animation-delay: calc(var(--d) + 1.5s);
+}
+.c-bar.active .c-bar-val { color: #00cec9; }
+@keyframes barValFade {
+    to { opacity: 1; }
+}
+.chart-labels {
+    display: flex; justify-content: space-around;
+    margin-top: 10px;
+}
+.chart-labels span {
+    font-family: var(--font-pixel);
+    font-size: 6px;
+    color: rgba(255,255,255,0.25);
+    flex: 1; text-align: center;
+}
+
+/* Metrics */
+.loader-metrics {
+    display: flex; gap: 12px;
+    margin-bottom: 20px;
+}
+.metric {
+    flex: 1;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 10px;
+    padding: 12px 8px;
+    display: flex; align-items: center; gap: 8px;
+}
+.metric-icon { font-size: 20px; }
+.metric-info { text-align: left; }
+.metric-label {
+    display: block;
+    font-family: var(--font-pixel);
+    font-size: 6px;
+    color: rgba(255,255,255,0.35);
+    margin-bottom: 4px;
+}
+.metric-value {
+    font-family: var(--font-pixel);
+    font-size: 11px;
+    color: #00cec9;
+    text-shadow: 0 0 8px rgba(0, 206, 201, 0.3);
+}
+
+/* Progress */
+.loader-progress {
+    display: flex; align-items: center; gap: 12px;
+    margin-bottom: 10px;
+}
+.progress-bar {
+    flex: 1; height: 8px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 4px;
     overflow: hidden;
-    margin: 0 auto 30px;
 }
-.pixel-loading-fill {
+.progress-fill {
     height: 100%; width: 0%;
-    background: var(--gradient-1);
-    transition: width 0.3s;
-    image-rendering: pixelated;
+    background: linear-gradient(90deg, #6c5ce7, #a29bfe, #00cec9);
+    border-radius: 4px;
+    transition: width 0.3s ease-out;
+    box-shadow: 0 0 10px rgba(108, 92, 231, 0.3);
 }
-.pixel-loading-fill::after {
-    content: '';
-    position: absolute; right: 0; top: 0;
-    width: 8px; height: 100%;
-    background: #fff;
-    animation: scanline 0.2s infinite;
+.progress-text {
+    font-family: var(--font-pixel);
+    font-size: 10px;
+    color: #a29bfe;
+    min-width: 36px;
 }
-@keyframes scanline { 0% { opacity: 1; } 50% { opacity: 0.5; } }
-.pixel-pacman {
-    width: 30px; height: 30px;
-    background: var(--accent-4);
-    border-radius: 50%;
-    position: relative;
-    margin: 0 auto;
-    animation: pacmanEat 0.5s infinite;
-    clip-path: polygon(100% 50%, 50% 0%, 0% 0%, 0% 100%, 50% 100%);
+.loader-status {
+    font-family: var(--font-pixel);
+    font-size: 7px;
+    color: rgba(255,255,255,0.4);
+    animation: statusPulse 1.5s infinite;
 }
-@keyframes pacmanEat {
-    0%, 100% { clip-path: polygon(100% 50%, 40% 0%, 0% 0%, 0% 100%, 40% 100%); }
-    50% { clip-path: polygon(100% 50%, 50% 50%, 0% 0%, 0% 100%, 50% 50%); }
+@keyframes statusPulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
 }
 
 /* ---- Cursor Trail ---- */
