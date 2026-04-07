@@ -72,6 +72,63 @@ document.addEventListener('DOMContentLoaded', () => {
         updateChart(loadProgress);
     }, 180);
 
+    // ---- 3D Parallax Hero ----
+    const parallaxContainer = document.getElementById('parallaxContainer');
+    const heroContent3d = document.getElementById('heroContent3d');
+
+    if (parallaxContainer) {
+        const layers = parallaxContainer.querySelectorAll('.parallax-layer');
+        let mouseX = 0, mouseY = 0;
+        let currentX = 0, currentY = 0;
+
+        document.addEventListener('mousemove', (e) => {
+            mouseX = (e.clientX - window.innerWidth / 2) / window.innerWidth;
+            mouseY = (e.clientY - window.innerHeight / 2) / window.innerHeight;
+        });
+
+        function animateParallax() {
+            currentX += (mouseX - currentX) * 0.06;
+            currentY += (mouseY - currentY) * 0.06;
+
+            layers.forEach(layer => {
+                const speed = parseFloat(layer.dataset.speed) || 0;
+                const moveX = currentX * speed * 800;
+                const moveY = currentY * speed * 400;
+                layer.style.transform = `translate3d(${moveX}px, ${moveY}px, 0)`;
+            });
+
+            // 3D tilt on content
+            if (heroContent3d) {
+                const tiltX = currentY * -8;
+                const tiltY = currentX * 8;
+                heroContent3d.style.transform = `rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
+            }
+
+            requestAnimationFrame(animateParallax);
+        }
+        animateParallax();
+
+        // Scroll parallax for layers
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
+            if (scrollY > window.innerHeight) return;
+            layers.forEach(layer => {
+                const speed = parseFloat(layer.dataset.speed) || 0;
+                const currentTransform = layer.style.transform || '';
+                const scrollOffset = scrollY * speed * 2;
+                layer.style.transform = `${currentTransform} translateY(${scrollOffset}px)`;
+            });
+        });
+    }
+
+    // Scroll CTA click
+    const scrollCta = document.querySelector('.hero-scroll-cta');
+    if (scrollCta) {
+        scrollCta.addEventListener('click', () => {
+            document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
+        });
+    }
+
     // ---- Cursor Trail ----
     const cursorTrail = document.getElementById('cursorTrail');
     let lastTrailTime = 0;
